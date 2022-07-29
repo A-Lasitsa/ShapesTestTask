@@ -1,4 +1,4 @@
-/* Таблица с продуктами - Product; название продукта во всех таблицах - pName */
+/* РќР°Р·РІР°РЅРёРµ С‚Р°Р±Р»РёС†С‹ СЃ РїСЂРѕРґСѓРєС‚Р°РјРё - Product; РєРѕР»РѕРЅРєР° СЃ РЅР°Р·РІР°РЅРёСЏРјРё РїСЂРѕРґСѓРєС‚РѕРІ РІРѕ РІСЃРµС… С‚Р°Р±Р»РёС†Р°С… - pName */
 declare @SQL nvarchar(max) = 'select Product.pName, category from Product left join ('
 
 select @SQL = @SQL + 'select Product.pName, '''+ t.TABLE_NAME +''' as category from Product join ['+ t.TABLE_NAME +'] on Product.pName = ['+ t.TABLE_NAME +'].pName union ' 
